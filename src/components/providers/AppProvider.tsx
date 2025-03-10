@@ -16,4 +16,4 @@ export default function AppProvider({ children }: AppProviderProps) {
       <Toaster />
     </AuthProvider>
   );
-} 
+}

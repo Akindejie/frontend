@@ -7,8 +7,6 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { toast } from 'sonner';
-import { MainLayout } from '@/components/layout';
-import { useAuthContext } from '@/hooks';
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -34,6 +32,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { useAuthContext } from '@/hooks';
 
 // Define form schema with Zod
 const registerSchema = z.object({
@@ -124,7 +123,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <MainLayout>
+    <>
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-md mx-auto">
           <Card>
@@ -265,6 +264,6 @@ export default function RegisterPage() {
           </Card>
         </div>
       </div>
-    </MainLayout>
+    </>
   );
 }

@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
-import { MainLayout } from '@/components/layout';
 import {
   Card,
   CardContent,
@@ -71,7 +70,7 @@ export default function TenantDashboardPage() {
   };
 
   return (
-    <MainLayout>
+    <>
       <div className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold">Tenant Dashboard</h1>
@@ -254,6 +253,6 @@ export default function TenantDashboardPage() {
           </TabsContent>
         </Tabs>
       </div>
-    </MainLayout>
+    </>
   );
 }

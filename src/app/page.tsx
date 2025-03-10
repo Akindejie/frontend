@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { MainLayout } from '@/components/layout';
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <MainLayout>
+    <>
       {/* Hero Section */}
       <section className="relative bg-muted py-20">
         <div className="container mx-auto px-4">
@@ -154,6 +153,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </MainLayout>
+    </>
   );
 }

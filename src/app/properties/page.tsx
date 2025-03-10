@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { toast } from 'sonner';
-import { MainLayout } from '@/components/layout';
 import { PropertyCard, PropertyFilters } from '@/components/property';
 import { propertyService } from '@/services';
 import {
@@ -63,7 +62,7 @@ export default function PropertiesPage() {
   };
 
   return (
-    <MainLayout>
+    <>
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-8">
           Find Your Perfect Rental Property
@@ -171,6 +170,6 @@ export default function PropertiesPage() {
           </div>
         </div>
       </div>
-    </MainLayout>
+    </>
   );
 }

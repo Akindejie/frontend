@@ -6,7 +6,6 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { toast } from 'sonner';
-import { MainLayout } from '@/components/layout';
 import { Button } from '@/components/ui/button';
 import {
   Form,
@@ -239,35 +238,31 @@ export default function NewApplicationPage() {
 
   if (loading) {
     return (
-      <MainLayout>
-        <div className="container mx-auto px-4 py-12 flex justify-center items-center min-h-[60vh]">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-        </div>
-      </MainLayout>
+      <div className="container mx-auto px-4 py-12 flex justify-center items-center min-h-[60vh]">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
     );
   }
 
   if (!property) {
     return (
-      <MainLayout>
-        <div className="container mx-auto px-4 py-12">
-          <div className="bg-muted p-8 rounded-lg text-center">
-            <h2 className="text-2xl font-bold mb-2">Property Not Found</h2>
-            <p className="text-muted-foreground mb-4">
-              The property you are trying to apply for does not exist or has
-              been removed.
-            </p>
-            <Button onClick={() => router.push('/properties')}>
-              Browse Properties
-            </Button>
-          </div>
+      <div className="container mx-auto px-4 py-12">
+        <div className="bg-muted p-8 rounded-lg text-center">
+          <h2 className="text-2xl font-bold mb-2">Property Not Found</h2>
+          <p className="text-muted-foreground mb-4">
+            The property you are trying to apply for does not exist or has been
+            removed.
+          </p>
+          <Button onClick={() => router.push('/properties')}>
+            Browse Properties
+          </Button>
         </div>
-      </MainLayout>
+      </div>
     );
   }
 
   return (
-    <MainLayout>
+    <>
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-2">Rental Application</h1>
         <p className="text-muted-foreground mb-8">
@@ -714,6 +709,6 @@ export default function NewApplicationPage() {
           </div>
         </div>
       </div>
-    </MainLayout>
+    </>
   );
 }

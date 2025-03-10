@@ -5,7 +5,6 @@ import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { toast } from 'sonner';
-import { MainLayout } from '@/components/layout';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -59,35 +58,30 @@ export default function PropertyDetailsPage() {
 
   if (loading) {
     return (
-      <MainLayout>
-        <div className="container mx-auto px-4 py-12 flex justify-center items-center min-h-[60vh]">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-        </div>
-      </MainLayout>
+      <div className="container mx-auto px-4 py-12 flex justify-center items-center min-h-[60vh]">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
     );
   }
 
   if (!property) {
     return (
-      <MainLayout>
-        <div className="container mx-auto px-4 py-12">
-          <div className="bg-muted p-8 rounded-lg text-center">
-            <h2 className="text-2xl font-bold mb-2">Property Not Found</h2>
-            <p className="text-muted-foreground mb-4">
-              The property you are looking for does not exist or has been
-              removed.
-            </p>
-            <Link href="/properties">
-              <Button>Browse Properties</Button>
-            </Link>
-          </div>
+      <div className="container mx-auto px-4 py-12">
+        <div className="bg-muted p-8 rounded-lg text-center">
+          <h2 className="text-2xl font-bold mb-2">Property Not Found</h2>
+          <p className="text-muted-foreground mb-4">
+            The property you are looking for does not exist or has been removed.
+          </p>
+          <Link href="/properties">
+            <Button>Browse Properties</Button>
+          </Link>
         </div>
-      </MainLayout>
+      </div>
     );
   }
 
   return (
-    <MainLayout>
+    <>
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Property Images and Details */}
@@ -362,6 +356,6 @@ export default function PropertyDetailsPage() {
           </div>
         </div>
       </div>
-    </MainLayout>
+    </>
   );
 }
